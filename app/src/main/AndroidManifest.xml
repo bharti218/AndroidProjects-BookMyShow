@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMyShow">
         <activity
+            android:name=".RegisterAcitivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

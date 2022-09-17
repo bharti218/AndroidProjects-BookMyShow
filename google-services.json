@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "636041676453",
+    "project_id": "bookmyshow-4f669",
+    "storage_bucket": "bookmyshow-4f669.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636041676453:android:dd26f7c4d2ddd00d8cef4c",
+        "android_client_info": {
+          "package_name": "com.bharti.singh.bookmyshow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636041676453-pd7ka9j6e54lob7vr626hf3sv8v8gqsf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbBJ60HVAnIMndKzJYMJNiDxVg0KRWYk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636041676453-pd7ka9j6e54lob7vr626hf3sv8v8gqsf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
