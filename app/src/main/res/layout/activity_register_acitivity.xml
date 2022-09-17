@@ -29,7 +29,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/reg_username_input"
+                android:id="@+id/reg_emial_input"
                 android:background="@drawable/textfield_bg"
                 android:padding="10dp"
                 android:layout_gravity="center"
@@ -96,6 +96,7 @@
             android:textColor="@color/black"
             android:layout_gravity="center"
             android:backgroundTint="@color/gray"
+            android:id="@+id/register_activity_btn"
             android:padding="10dp"/>
 
     </LinearLayout>

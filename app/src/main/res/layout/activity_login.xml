@@ -29,7 +29,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/reg_username_input"
+                android:id="@+id/login_email_input"
                 android:background="@drawable/textfield_bg"
                 android:padding="10dp"
                 android:layout_gravity="center"
@@ -59,7 +59,7 @@
                 android:padding="10dp"
                 android:layout_gravity="center"
                 android:background="@drawable/textfield_bg"
-                android:id="@+id/reg_password"/>
+                android:id="@+id/login_password"/>
 
         </LinearLayout>
 
@@ -73,6 +73,7 @@
             android:textColor="@color/black"
             android:layout_gravity="center"
             android:backgroundTint="@color/gray"
+            android:id="@+id/activity_login_btn"
             android:padding="10dp"/>
 
     </LinearLayout>
