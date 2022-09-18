@@ -6,20 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
-import androidx.appcompat.app.AlertDialog
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.FirebaseUser
 import java.util.*
 import kotlin.collections.HashMap
 
-class RegisterAcitivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     private lateinit var rootRef : DatabaseReference
     private lateinit var auth: FirebaseAuth
@@ -44,19 +38,10 @@ class RegisterAcitivity : AppCompatActivity() {
         email = findViewById(R.id.reg_emial_input)
         password = findViewById(R.id.reg_password)
         registerBtn = findViewById(R.id.register_activity_btn)
-        isStudioLogin = findViewById(R.id.reg_is_studio_btn);
+        isStudioLogin = findViewById(R.id.reg_is_studio_btn)
 
         registerBtn.setOnClickListener {
             register()
-        }
-
-        auth.addAuthStateListener {
-            if(it.currentUser==null){
-
-            }else{
-                firebaseUser = it.currentUser!!
-            }
-
         }
     }
 
@@ -71,7 +56,7 @@ class RegisterAcitivity : AppCompatActivity() {
         }else if(passwordStr.length<6){
             Toast.makeText(this, "Password length should be more than 6", Toast.LENGTH_SHORT).show()
         } else{
-            registerUser(emailStr, passwordStr, isStudio);
+            registerUser(emailStr, passwordStr, isStudio)
         }
 
     }
@@ -84,7 +69,7 @@ class RegisterAcitivity : AppCompatActivity() {
         val map = HashMap<String, Any>()
         map["email"] = email
         map["password"] = password
-        map["id"] = auth.currentUser!!.uid;
+        map["id"] = auth.currentUser!!.uid
         map["isStudioLogin"] = isStudio.toString()
 
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
@@ -92,12 +77,12 @@ class RegisterAcitivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Log.i("Register Activity", "on is success")
                     progressDialog.dismiss()
-                    Toast.makeText(this@RegisterAcitivity, "Update profile", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RegisterActivity, "Update profile", Toast.LENGTH_SHORT).show()
 
                     val intent: Intent = if(isStudio){
-                        Intent(this@RegisterAcitivity, StudioActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        Intent(this@RegisterActivity, StudioActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     }else{
-                        Intent(this@RegisterAcitivity, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        Intent(this@RegisterActivity, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     }
                     startActivity(intent)
                     finish()
@@ -107,7 +92,7 @@ class RegisterAcitivity : AppCompatActivity() {
 
         }.addOnFailureListener{
             progressDialog.dismiss()
-            Toast.makeText(this@RegisterAcitivity, it.message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@RegisterActivity, it.message, Toast.LENGTH_SHORT).show()
 
         }
 

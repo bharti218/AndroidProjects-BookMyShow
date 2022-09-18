@@ -15,8 +15,8 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        loginTextView = findViewById(R.id.login_btn);
-        registerTextView = findViewById(R.id.register_btn);
+        loginTextView = findViewById(R.id.login_btn)
+        registerTextView = findViewById(R.id.register_btn)
 
 
         loginTextView.setOnClickListener {
@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity() {
         }
 
         registerTextView.setOnClickListener {
-            startActivity(Intent(this@SplashActivity, RegisterAcitivity::class.java))
+            startActivity(Intent(this@SplashActivity, RegisterActivity::class.java))
         }
     }
 }
