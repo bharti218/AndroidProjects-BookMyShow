@@ -7,13 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.bharti.singh.bookmyshow.R
 
-class UserFragment : Fragment() {
+class ViewerHomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
+
+
 }

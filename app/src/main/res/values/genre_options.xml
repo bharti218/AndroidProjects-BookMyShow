@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="show_genre_options">
+        <item>Actions</item>
+        <item>Romance</item>
+        <item>Comedy</item>
+        <item>Horror</item>
+    </string-array>
+</resources>

@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMyShow">
         <activity
+            android:name=".AddShowActivity"
+            android:exported="true" />
+        <activity
+            android:name=".StudioShowActivity"
+            android:exported="true" />
+        <activity
             android:name=".StudioActivity"
             android:exported="true" />
         <activity
