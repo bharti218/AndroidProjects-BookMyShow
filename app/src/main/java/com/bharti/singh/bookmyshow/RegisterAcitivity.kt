@@ -87,22 +87,19 @@ class RegisterAcitivity : AppCompatActivity() {
         map["id"] = auth.currentUser!!.uid;
         map["isStudioLogin"] = isStudio.toString()
 
-        Toast.makeText(this@RegisterAcitivity, "Map size = $map.size", Toast.LENGTH_LONG).show()
-
-
-
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
             rootRef.child("Users").child(auth.currentUser!!.uid).setValue(map).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.i("Register Activity", "on is success")
                     progressDialog.dismiss()
                     Toast.makeText(this@RegisterAcitivity, "Update profile", Toast.LENGTH_SHORT).show()
-                    startActivity(
-                        Intent(
-                            this@RegisterAcitivity,
-                            MainActivity::class.java
-                        ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    )
+
+                    val intent: Intent = if(isStudio){
+                        Intent(this@RegisterAcitivity, StudioActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    }else{
+                        Intent(this@RegisterAcitivity, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    }
+                    startActivity(intent)
                     finish()
                 }
             }
